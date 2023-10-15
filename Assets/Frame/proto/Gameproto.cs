@@ -24,7 +24,9 @@ public class EnterGameMsg
     public int Posx;//出生位置
     public int Posy;
     public int Posz;
+    //0,登录成功，-1失败
     public int result;
+    //原因
     public string reason;
 }
 

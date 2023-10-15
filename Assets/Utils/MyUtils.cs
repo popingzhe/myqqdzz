@@ -30,8 +30,26 @@ public static class MyUtils
             actionMsg.Encode(wb);
             return wb.CopyData();
         }
+        if(msg is MoveMsg)
+        {
+            MoveMsg moveMsg = msg as MoveMsg;
+            moveMsg.Encode(wb);
+            return wb.CopyData();
+        }
 
+        if (msg is FoodMsg)
+        {
+            FoodMsg moveMsg = msg as FoodMsg;
+            moveMsg.Encode(wb);
+            return wb.CopyData();
+        }
 
+        if (msg is EatMsg)
+        {
+            EatMsg moveMsg = msg as EatMsg;
+            moveMsg.Encode(wb);
+            return wb.CopyData();
+        }
         return null;
     }
 
@@ -56,6 +74,26 @@ public static class MyUtils
             return msg;
         }
 
+        if (protoName == "MoveMsg")
+        {
+            MoveMsg msg = new MoveMsg();
+            msg.Decode(rb);
+            return msg;
+        }
+
+        if(protoName == "FoodMsg")
+        {
+            FoodMsg msg = new FoodMsg();
+            msg.Decode(rb);
+            return msg;
+        }
+
+        if (protoName == "EatMsg")
+        {
+            EatMsg msg = new EatMsg();
+            msg.Decode(rb);
+            return msg;
+        }
         return null;
     }
 
